@@ -1,0 +1,18 @@
+# 3d Lennard-Jones gas
+
+units           lj
+atom_style      atomic
+read_restart    ./DATA/restart.500000
+include         setup.in
+
+# Equilibriate
+
+fix             1 all nve
+fix             2 all temp/csvr ${temp2} ${temp2} ${tdamp} ${seed}
+fix             3 all plumed plumedfile plumed_restart.dat outfile plumed.log
+
+dump            myDump all atom 10000 ./DATA/equilibriate2
+
+reset_timestep  500000
+
+run             500000

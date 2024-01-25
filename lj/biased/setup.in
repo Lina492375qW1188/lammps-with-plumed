@@ -1,0 +1,24 @@
+variable        seed world 87287
+variable        out_freq equal 500
+
+variable	    press equal 1.0
+variable	    pdamp equal 1000.0
+
+variable	    temp1 equal 1.0
+variable	    temp2 equal 0.5
+variable	    tdamp equal 100.0
+
+variable        epsilon equal 1.0
+variable        sigma equal 0.89
+variable        rcut equal 6.0
+
+timestep        0.01
+
+thermo          1000
+thermo_style    custom step temp pe press
+
+neighbor        0.3 bin
+neigh_modify    delay 0 every 20 check no
+
+pair_style      lj/cut ${rcut}
+pair_coeff      1 1 ${epsilon} ${sigma} ${rcut}

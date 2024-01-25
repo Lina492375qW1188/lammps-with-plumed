@@ -1,0 +1,37 @@
+# Restart simulation. This command will append results of new simulations to the same output files, e.g. COLVAR.
+RESTART
+
+UNITS LENGTH=3.0
+
+COORDINATIONNUMBER ...
+   LABEL=coord
+   SPECIES=1-512
+   SWITCH={CUBIC D_0=0.5 D_MAX=0.55}
+   MORE_THAN={RATIONAL R_0=5.0 D_MAX=5.5}
+   LOWMEM
+... COORDINATIONNUMBER
+
+
+METAD ...
+   LABEL=metad
+   ARG=coord.morethan
+   SIGMA=1.2
+   HEIGHT=0.1
+   BIASFACTOR=5 
+   TEMP=0.5
+   PACE=100
+   GRID_MIN=0
+   GRID_MAX=512
+   GRID_BIN=1000 
+   CALC_RCT
+   ACCELERATION
+... METAD
+
+
+PRINT ...
+ARG=coord.morethan,metad.bias,metad.rbias,metad.rct,metad.acc
+STRIDE=100
+FILE=COLVAR
+... PRINT
+
+ENDPLUMED
