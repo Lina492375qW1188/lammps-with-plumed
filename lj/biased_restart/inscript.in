@@ -7,7 +7,7 @@ include         setup.in
 
 # Randomize
 
-velocity        all create 1.0 ${seed} dist gaussian
+velocity        all create ${temp1} ${seed} dist gaussian
 
 fix             1 all nvt temp ${temp1} ${temp2} ${tdamp}
 
