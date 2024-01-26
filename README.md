@@ -11,6 +11,8 @@ make yes-extra-dump
 make serial
 ```
 
+Basic brute-force, metadynamics, restart examples with a minimal randomization and energy minimization are described in `lj` (droplet nucleation of Lennard-Jones particles).
+
 [LAMMPS](https://www.lammps.org/#gsc.tab=0) version: 2Aug2023
 
 [PLUMED](https://www.plumed.org/doc-v2.8/user-doc/html/index.html) version: 2.8.2.
