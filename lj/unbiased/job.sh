@@ -7,5 +7,5 @@
 
 module load openmpi/4.0.5-gcc10.2.0
 
-mpirun -n 1 [PATH_TO_LAMMPS_FOLDER]/lammps-2Aug2023/src/lmp_mpi -in inscript.in
+mpirun -n 1 [PATH_TO_LAMMPS_FOLDER]/lammps*/src/lmp_mpi -in inscript.in
 
