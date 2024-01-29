@@ -1,0 +1,34 @@
+# 3d OPP
+
+units           lj
+atom_style      atomic
+read_data       ./DATA/opp.init
+include         setup.in
+
+# Randomize
+
+velocity        all create ${temp1} ${seed} dist gaussian
+
+fix             1 all nvt temp ${temp1} ${temp1} ${tdamp}
+
+dump            myDump all atom ${out_freq1} ./DATA/randomize
+
+run             100000
+
+minimize        1.0e-2 1.0e-3 100 1000
+
+undump          myDump
+
+unfix           1
+
+# Equilibriate
+
+fix             1 all npt temp ${temp1} ${temp2} ${tdamp} iso ${press} ${press} ${pdamp}
+
+dump            myDump all atom ${out_freq2} ./DATA/equilibriate
+
+reset_timestep  0
+
+restart         100000 ./DATA/restart
+
+run             100000

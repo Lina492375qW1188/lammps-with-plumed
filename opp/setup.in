@@ -1,0 +1,23 @@
+variable        seed world 87287
+variable        out_freq1 equal 10000
+variable        out_freq2 equal 10000
+
+variable	    press equal 1.5
+variable	    pdamp equal 1000.0
+
+variable	    temp1 equal 5.0
+variable	    temp2 equal 0.5
+variable	    tdamp equal 100.0
+
+timestep        0.002
+
+thermo          ${out_freq1}
+thermo_style    custom step temp pe press
+
+neighbor        0.3 bin
+neigh_modify    delay 0 every 20 check no
+
+pair_style      table linear 2000
+pair_coeff      1 1 pp10.table OPP_FE
+
+pair_write      1 1 132 r 0.3 2.92 pp10.test OPP_FE
