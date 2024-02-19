@@ -11,9 +11,9 @@ velocity        all create ${temp1} ${seed} dist gaussian
 
 fix             1 all nvt temp ${temp1} ${temp2} ${tdamp}
 
-dump            myDump all atom 1000 ./DATA/randomize
+dump            myDump all atom 10000 ./DATA/randomize
 
-run             5000
+run             100000
 
 minimize        1.0e-2 1.0e-3 100 1000
 

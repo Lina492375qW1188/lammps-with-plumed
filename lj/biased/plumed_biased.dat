@@ -14,19 +14,19 @@ METAD ...
    ARG=coord.morethan
    SIGMA=1.2
    HEIGHT=0.1
-   BIASFACTOR=5 
-   TEMP=0.5
+   BIASFACTOR=5
+   TEMP=0.52
    PACE=100
    GRID_MIN=0
    GRID_MAX=512
-   GRID_BIN=1000 
+   GRID_BIN=1000
    CALC_RCT
    ACCELERATION
 ... METAD
 
 
 PRINT ...
-ARG=coord.morethan,metad.bias,metad.rbias,metad.rct,metad.acc
+ARG=coord.morethan,metad.*
 STRIDE=100
 FILE=COLVAR
 ... PRINT
