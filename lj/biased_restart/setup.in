@@ -2,11 +2,11 @@ variable        seed world 87287
 variable        out_freq equal 500
 
 variable	    press equal 1.0
-variable	    pdamp equal 1000.0
+variable	    pdamp equal $(1000.0*dt)
 
 variable	    temp1 equal 1.0
 variable	    temp2 equal 0.52
-variable	    tdamp equal 100.0
+variable	    tdamp equal $(100.0*dt)
 
 variable        epsilon equal 1.0
 variable        sigma equal 0.89
