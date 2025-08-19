@@ -2,7 +2,7 @@
 
 [![LAMMPS](https://img.shields.io/badge/LAMMPS-2Aug2023-critical)](https://www.lammps.org/#gsc.tab=0)
 
-[![LAMMPS](https://img.shields.io/badge/LAMMPS-2Aug2023-blue)](https://www.lammps.org/#gsc.tab=0)
+[![PLUMED](https://img.shields.io/badge/PLUMED-2.8.2-orange)](https://www.lammps.org/#gsc.tab=0)
 
 There are many ways to build lammps with plumed support. Refer to `lammps*/lib/plumed/README` and `lammps/src/PLUMED` for more details.
 
@@ -41,7 +41,3 @@ make mpi # or make serial if no MPI installed.
 
 
 Basic brute-force, metadynamics, restart examples with a minimal randomization and energy minimization are described in `lj` (droplet nucleation of Lennard-Jones particles).
-
-[LAMMPS](https://www.lammps.org/#gsc.tab=0) version: 2Aug2023
-
-[PLUMED](https://www.plumed.org/doc-v2.8/user-doc/html/index.html) version: 2.8.2.
