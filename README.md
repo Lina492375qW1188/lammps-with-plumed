@@ -1,7 +1,6 @@
 # lammps-with-plumed
 
 [![LAMMPS](https://img.shields.io/badge/LAMMPS-2Aug2023-critical)](https://www.lammps.org/#gsc.tab=0)
-
 [![PLUMED](https://img.shields.io/badge/PLUMED-2.8.2-orange)](https://www.lammps.org/#gsc.tab=0)
 
 There are many ways to build lammps with plumed support. Refer to `lammps*/lib/plumed/README` and `lammps/src/PLUMED` for more details.
