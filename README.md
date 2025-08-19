@@ -11,6 +11,27 @@ make yes-extra-dump
 make serial
 ```
 
+Or build PLUMED first and link LAMMPS to PLUMED
+```
+cd plumed*/
+PATH_TO_PLUMED=/usr/local/ # Example
+./configure --prefix=${PATH_TO_PLUMED}
+./configure --prefix=${PATH_TO_PLUMED} \
+            --enable-mpi CXX="$MPICXX" \ # if installed with MPI
+            --enable-modules=+crystallization # if installed with crystallization module
+make -j 4
+make install
+source source.sh # To have PLUMED in PATH variable.
+
+cd lammps*/src/
+make lib-plumed args="-p ${PATH_TO_PLUMED} -m shared"
+make yes-plumed
+make yes-extra-fix
+make yes-extra-dump
+make mpi # or make serial if no MPI installed.
+```
+
+
 Basic brute-force, metadynamics, restart examples with a minimal randomization and energy minimization are described in `lj` (droplet nucleation of Lennard-Jones particles).
 
 [LAMMPS](https://www.lammps.org/#gsc.tab=0) version: 2Aug2023
