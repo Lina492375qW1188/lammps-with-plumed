@@ -1,6 +1,8 @@
 # lammps-with-plumed
 
-The LAMMPS was installed with EXTRA-FIX, EXTRA-DUMP and PLUMED package.
+There are many ways to build lammps with plumed support. Refer to `lammps*/lib/plumed/README` and `lammps/src/PLUMED` for more details.
+
+The LAMMPS used for this repo was installed with EXTRA-FIX, EXTRA-DUMP and PLUMED package.
 
 ```
 cd lammps*/src/
